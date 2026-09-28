@@ -1,0 +1,358 @@
+/* ===== Base — 清华紫科技风 ===== */
+:root {
+  --text: #241b2f;
+  --muted: #6f6480;
+  --thu-purple: #82318e;       /* 清华紫 */
+  --deep: #4a1d63;             /* 深紫 */
+  --indigo: #3b3f8f;           /* 蓝紫(科技感渐变搭档) */
+  --accent: #6a2c91;
+  --accent-light: #f3ecf9;
+  --rule: #e6e0ef;
+  --bg: #faf8fd;
+  --card-bg: #ffffff;
+  --shadow: 0 2px 10px rgba(74, 29, 99, 0.10);
+  --max-width: 860px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background:
+    radial-gradient(1100px 400px at 85% -100px, rgba(130, 49, 142, 0.10), transparent 60%),
+    radial-gradient(900px 380px at -10% 220px, rgba(59, 63, 143, 0.08), transparent 60%),
+    var(--bg);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.muted { color: var(--muted); font-weight: normal; }
+
+.focus {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== Header / Nav ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(90deg, var(--deep), var(--thu-purple) 55%, var(--indigo));
+  box-shadow: 0 2px 12px rgba(74, 29, 99, 0.35);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.nav-brand {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.nav-links a { color: rgba(255, 255, 255, 0.88); }
+.nav-links a:hover { color: #ffffff; text-decoration: none; }
+
+/* ===== Title block (hero) ===== */
+.title-block {
+  text-align: center;
+  padding: 3.4rem 1.5rem 2.6rem;
+  margin: 0 -1.5rem 0.5rem;
+  color: #ffffff;
+  background:
+    radial-gradient(800px 300px at 70% 120%, rgba(255, 255, 255, 0.14), transparent 60%),
+    linear-gradient(140deg, var(--deep) 0%, var(--thu-purple) 52%, var(--indigo) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 细网格纹理,增强科技感 */
+.title-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.title-block > * { position: relative; }
+
+.workshop-meta {
+  font-size: 1.0rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0.3rem 0;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 2.1rem;
+  line-height: 1.3;
+  margin: 0.9rem 0 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+}
+
+.keywords {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 1.2rem;
+}
+
+.keywords .muted { color: rgba(255, 255, 255, 0.65); }
+
+/* ===== Sections ===== */
+.section {
+  padding: 1.9rem 0 0.5rem;
+}
+
+.section h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 1.45rem;
+  margin: 0 0 1rem;
+  color: var(--deep);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section h2::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 1.35em;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--thu-purple), var(--indigo));
+  flex: none;
+}
+
+.section h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--accent);
+}
+
+/* ===== News ===== */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-list li {
+  padding: 0.45rem 0 0.45rem 1.4rem;
+  position: relative;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.news-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--thu-purple);
+}
+
+.news-list time {
+  display: inline-block;
+  min-width: 4.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Topics ===== */
+.topics {
+  columns: 2;
+  column-gap: 2.5rem;
+  padding-left: 1.2rem;
+}
+
+.topics li { margin-bottom: 0.4rem; break-inside: avoid; }
+.topics li::marker { color: var(--thu-purple); }
+
+/* ===== Person cards (speakers / organizers) ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.person-card {
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1.1rem 0.8rem 0.9rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.person-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(74, 29, 99, 0.16);
+}
+
+.person-photo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 0.6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--accent-light), #e8ecfa);
+  border: 3px solid #ffffff;
+  outline: 2px solid var(--rule);
+}
+
+.person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.person-photo.placeholder,
+.person-photo.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.person-name {
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+}
+
+.person-affil {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0 0 0.15rem;
+}
+
+.person-talk {
+  font-size: 0.88rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.person-card.tba { opacity: 0.8; }
+
+/* ===== Program table ===== */
+.table-wrap {
+  overflow-x: auto;
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 0.3rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background: linear-gradient(90deg, rgba(130, 49, 142, 0.14), rgba(59, 63, 143, 0.14));
+  color: var(--deep);
+  font-family: "Lato", sans-serif;
+}
+
+tbody tr:hover { background: var(--accent-light); }
+
+/* ===== Call for Abstracts ===== */
+.dates {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.dates li {
+  padding: 0.35rem 0 0.35rem 1.4rem;
+  position: relative;
+}
+
+.dates li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  font-size: 0.6rem;
+  top: 0.75rem;
+  color: var(--thu-purple);
+}
+
+/* ===== Contact ===== */
+.contact-list { padding-left: 1.2rem; }
+
+/* ===== Footer ===== */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.6rem 0 2rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--muted);
+  background: linear-gradient(180deg, transparent, rgba(130, 49, 142, 0.05));
+}
+
+.site-footer p { margin: 0.2rem 0; }
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  h1 { font-size: 1.55rem; }
+
+  .nav { flex-direction: column; align-items: flex-start; }
+
+  .topics { columns: 1; }
+
+  .title-block { padding: 2.6rem 1.2rem 2rem; }
+}
